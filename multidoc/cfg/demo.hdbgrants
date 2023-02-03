@@ -1,0 +1,27 @@
+{
+  "JSONDEMO": {
+    "object_owner": {
+      
+     
+      "schema_privileges" : [
+        {
+          "schema" : "BTP",   // optional; override schema defined in grantor service
+          "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ],
+          "privileges_with_grant_option" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]
+        }
+      ]
+      
+      
+    },
+    "application_user": {
+      
+      "schema_privileges": [
+        {
+            "schema" : "BTP",   // optional; override schema defined in grantor service
+            "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]            
+        }
+      ]
+      
+    }
+  }
+}

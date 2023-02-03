@@ -1,0 +1,74 @@
+{
+  "json::USA": {
+    "target": {
+      "object": "USA",
+      "schema": "BTP"
+    }
+  },
+  "json::AUSTRALIA": {
+    "target": {
+      "object": "AUSTRALIA",
+      "schema": "BTP"
+    }
+  },
+  "json::CHILE": {
+    "target": {
+      "object": "CHILE",
+      "schema": "BTP"
+    }
+  },
+  "json::ARGENTINA": {
+    "target": {
+      "object": "ARGENTINA",
+      "schema": "BTP"
+    }
+  },
+  "json::AUSTRIA": {
+    "target": {
+      "object": "AUSTRIA",
+      "schema": "BTP"
+    }
+  },
+  "json::DENMARK": {
+    "target": {
+      "object": "DENMARK",
+      "schema": "BTP"
+    }
+  },
+  "json::GERMANY": {
+    "target": {
+      "object": "GERMANY",
+      "schema": "BTP"
+    }
+  },
+  "json::INDIA": {
+    "target": {
+      "object": "INDIA",
+      "schema": "BTP"
+    }
+  },
+  "json::NEWZEALAND": {
+    "target": {
+      "object": "NEWZEALAND",
+      "schema": "BTP"
+    }
+  },
+  "json::KOREA": {
+    "target": {
+      "object": "KOREA",
+      "schema": "BTP"
+    }
+  },
+  "json::TOPALL": {
+    "target": {
+      "object": "TOPALL",
+      "schema": "BTP"
+    }
+  },
+  "json::TOPALL1": {
+    "target": {
+      "object": "TOPALL1",
+      "schema": "BTP"
+    }
+  }
+}

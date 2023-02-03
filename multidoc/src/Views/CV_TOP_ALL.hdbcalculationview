@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.Views::CV_TOP_ALL" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="CV_TOP_ALL"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="json::TOPALL1">
+    <resourceUri>json::TOPALL1</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews/>
+
+<logicalModel id="json::TOPALL1">
+  <attributes>
+    <attribute id="TRACK_NAME" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRACK_NAME"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="TRACK NAME"/>
+    </attribute>
+    <attribute id="TRACKLISTNAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRACKLISTNAME"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="TRACKLISTNAME"/>
+    </attribute>
+    <attribute id="TRACK_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TRACK_ID"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="TRACK ID"/>
+    </attribute>
+    <attribute id="ALBUM_NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ALBUM_NAME"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="ALBUM NAME"/>
+    </attribute>
+    <attribute id="IMAGE" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="IMAGE"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="IMAGE"/>
+    </attribute>
+    <attribute id="Artist_NAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Artist_NAME"/>
+      <keyMapping columnObjectName="TOPALL1" columnName="Artist NAME"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="DANCEABILITY" order="7" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DANCEABILITY"/>
+      <measureMapping columnObjectName="TOPALL1" columnName="DANCEABILITY"/>
+    </measure>
+    <measure id="SPEECHINESS" order="8" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SPEECHINESS"/>
+      <measureMapping columnObjectName="TOPALL1" columnName="SPEECHINESS"/>
+    </measure>
+    <measure id="ENERGY" order="9" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="ENERGY"/>
+      <measureMapping columnObjectName="TOPALL1" columnName="ENERGY"/>
+    </measure>
+    <measure id="POPULARITY" order="10" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="POPULARITY"/>
+      <measureMapping columnObjectName="TOPALL1" columnName="POPULARITY"/>
+    </measure>
+    <measure id="LIVENESS" order="11" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="LIVENESS"/>
+      <measureMapping columnObjectName="TOPALL1" columnName="LIVENESS"/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

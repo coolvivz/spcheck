@@ -1,0 +1,19 @@
+{
+  "role": {
+    "name": "json::jsondemo",
+    "object_privileges": [
+      {
+        "name": "json::TOPALL1",
+        "type": "SYNONYM"
+      }
+    ],
+    "schema_privileges": [
+      {
+        "privileges": [
+          "EXECUTE",
+          "SELECT"
+        ]
+      }
+    ]
+  }
+}

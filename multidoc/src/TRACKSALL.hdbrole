@@ -1,0 +1,13 @@
+{
+  "role": {
+    "name": "json::TRACKSALL",
+    "schema_privileges": [
+      {
+        "privileges": [
+          "SELECT",
+          "EXECUTE"
+        ]
+      }
+    ]
+  }
+}
