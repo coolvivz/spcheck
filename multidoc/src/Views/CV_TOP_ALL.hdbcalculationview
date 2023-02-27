@@ -4,64 +4,68 @@
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="json::TOPALL1">
-    <resourceUri>json::TOPALL1</resourceUri>
+  <DataSource id="json::TOPALL2">
+    <resourceUri>json::TOPALL2</resourceUri>
   </DataSource>
 </dataSources>
 <snapshotProcedures/>
 <calculationViews/>
 
-<logicalModel id="json::TOPALL1">
+<logicalModel id="json::TOPALL2">
   <attributes>
     <attribute id="TRACK_NAME" order="1" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TRACK_NAME"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="TRACK NAME"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="TRACK NAME"/>
     </attribute>
     <attribute id="TRACKLISTNAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TRACKLISTNAME"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="TRACKLISTNAME"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="TRACKLISTNAME"/>
     </attribute>
     <attribute id="TRACK_ID" order="3" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="TRACK_ID"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="TRACK ID"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="TRACK ID"/>
     </attribute>
     <attribute id="ALBUM_NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ALBUM_NAME"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="ALBUM NAME"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="ALBUM NAME"/>
     </attribute>
     <attribute id="IMAGE" order="5" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="IMAGE"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="IMAGE"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="IMAGE"/>
     </attribute>
     <attribute id="Artist_NAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="Artist_NAME"/>
-      <keyMapping columnObjectName="TOPALL1" columnName="Artist NAME"/>
+      <keyMapping columnObjectName="TOPALL2" columnName="Artist NAME"/>
     </attribute>
   </attributes>
   <calculatedAttributes/>
   <baseMeasures>
     <measure id="DANCEABILITY" order="7" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="DANCEABILITY"/>
-      <measureMapping columnObjectName="TOPALL1" columnName="DANCEABILITY"/>
+      <measureMapping columnObjectName="TOPALL2" columnName="DANCEABILITY"/>
     </measure>
     <measure id="SPEECHINESS" order="8" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="SPEECHINESS"/>
-      <measureMapping columnObjectName="TOPALL1" columnName="SPEECHINESS"/>
+      <measureMapping columnObjectName="TOPALL2" columnName="SPEECHINESS"/>
     </measure>
     <measure id="ENERGY" order="9" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="ENERGY"/>
-      <measureMapping columnObjectName="TOPALL1" columnName="ENERGY"/>
+      <measureMapping columnObjectName="TOPALL2" columnName="ENERGY"/>
     </measure>
     <measure id="POPULARITY" order="10" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="POPULARITY"/>
-      <measureMapping columnObjectName="TOPALL1" columnName="POPULARITY"/>
+      <measureMapping columnObjectName="TOPALL2" columnName="POPULARITY"/>
     </measure>
     <measure id="LIVENESS" order="11" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
       <descriptions defaultDescription="LIVENESS"/>
-      <measureMapping columnObjectName="TOPALL1" columnName="LIVENESS"/>
+      <measureMapping columnObjectName="TOPALL2" columnName="LIVENESS"/>
     </measure>
   </baseMeasures>
-  <calculatedMeasures/>
+  <calculatedMeasures>
+    <measure id="Speechiness_Level" order="12" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="13" scale="4" expressionLanguage="SQL" restrictionExpressionLanguage="SQL">
+      <formula>&quot;SPEECHINESS&quot; - (0.33)</formula>
+    </measure>
+  </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions/>
 </logicalModel>

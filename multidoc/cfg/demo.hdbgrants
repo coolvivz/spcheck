@@ -2,7 +2,7 @@
   "JSONDEMO": {
     "object_owner": {
       
-     
+      "system_privileges": [{"privileges": ["CATALOG READ"]}],
       "schema_privileges" : [
         {
           "schema" : "BTP",   // optional; override schema defined in grantor service
@@ -14,7 +14,7 @@
       
     },
     "application_user": {
-      
+      "system_privileges": [{"privileges": ["CATALOG READ"]}],
       "schema_privileges": [
         {
             "schema" : "BTP",   // optional; override schema defined in grantor service

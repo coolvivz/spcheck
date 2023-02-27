@@ -8,6 +8,9 @@
           "EXECUTE"
         ]
       }
+    ],
+    "system_privileges": [
+      "CATALOG READ"
     ]
   }
 }

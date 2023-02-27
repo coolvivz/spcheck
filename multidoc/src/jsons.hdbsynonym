@@ -70,5 +70,11 @@
       "object": "TOPALL1",
       "schema": "BTP"
     }
+  },
+  "json::TOPALL2": {
+    "target": {
+      "object": "TOPALL2",
+      "schema": "BTP"
+    }
   }
 }
