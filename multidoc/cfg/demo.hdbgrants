@@ -8,6 +8,11 @@
           "schema" : "BTP",   // optional; override schema defined in grantor service
           "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ],
           "privileges_with_grant_option" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]
+        },
+        {
+          "schema" : "SPOTIFY",   // optional; override schema defined in grantor service
+          "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ],
+          "privileges_with_grant_option" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]
         }
       ]
       
@@ -19,6 +24,11 @@
         {
             "schema" : "BTP",   // optional; override schema defined in grantor service
             "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]            
+        },
+        {
+          "schema" : "SPOTIFY",   // optional; override schema defined in grantor service
+          "privileges" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ],
+          "privileges_with_grant_option" : [ "INSERT", "UPDATE", "SELECT", "EXECUTE", "CREATE ANY" ]
         }
       ]
       

@@ -76,5 +76,23 @@
       "object": "TOPALL2",
       "schema": "BTP"
     }
+  },
+  "json::EDGES": {
+    "target": {
+      "object": "EDGES",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json::NODES": {
+    "target": {
+      "object": "NODES",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json::EDGES_staging": {
+    "target": {
+      "object": "EDGES_staging",
+      "schema": "SPOTIFY"
+    }
   }
 }
