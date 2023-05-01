@@ -1,0 +1,23 @@
+PROCEDURE "json.procedures::GS_STRONGLY_CONNECTED_COMPONENTS"(
+	OUT o_scc TABLE ("ID" NVARCHAR(1000), "COMPONENT" BIGINT),
+	OUT o_componentsCount BIGINT
+)
+LANGUAGE GRAPH READS SQL DATA AS
+BEGIN
+	-- create an insatnce of the graph
+	Graph g = Graph("json.graphs::SPOTIFY");
+	-- add a temporary attribute to store the component number for each node
+	ALTER g ADD TEMPORARY VERTEX ATTRIBUTE(BIGINT "COMPONENT");
+	BIGINT componentCounter = 0L;
+	-- run SCC which returns a sequence of sequences of vertices
+	Sequence<Sequence<Vertex>> m_scc = STRONGLY_CONNECTED_COMPONENTS(:g);
+	-- loop over the individual component and store the component number in each vertex' COMPONENT attribute
+	FOREACH m_component IN :m_scc {
+		componentCounter = :componentCounter + 1L;
+		FOREACH v IN :m_component {
+			v."COMPONENT" = :componentCounter;
+		}
+	}
+	o_scc = SELECT :v."ID", :v."COMPONENT" FOREACH v in Vertices(:g);
+	o_componentsCount = COUNT(:m_scc);
+END;

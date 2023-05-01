@@ -1,0 +1,5 @@
+view "json.Views.playlists::playlists_all" as (
+select 	"CATEGORY", "TYPE",	"PLAYLIST_ID",	"PLAYLIST_NAME",	"DESCRIPTION",	"TOTAL_TRACKS"  from "json.Views.playlists::playlists_gaming" union all
+select 	"CATEGORY", "TYPE",	"PLAYLIST_ID",	"PLAYLIST_NAME",	"DESCRIPTION",	"TOTAL_TRACKS" from "json.Views.playlists::playlists_mood" union all
+select 	"CATEGORY", "TYPE",	"PLAYLIST_ID",	"PLAYLIST_NAME",	"DESCRIPTION",	"TOTAL_TRACKS"from "json.Views.playlists::playlists_party" union all
+select 	"CATEGORY", "TYPE",	"PLAYLIST_ID",	"PLAYLIST_NAME",	"DESCRIPTION",	"TOTAL_TRACKS" from "json.Views.playlists::playlists_workout" )

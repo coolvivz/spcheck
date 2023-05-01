@@ -1,0 +1,6 @@
+VIEW "json.Views::testgraphs"("TRACK_ID", "ARTIST_ID", "ALBUM_ID", "PLAYLIST_ID") AS (
+SELECT * FROM OPENCYPHER_TABLE(
+ GRAPH WORKSPACE "json.graphs::SPOTIFY"
+    QUERY ' MATCH (n1)-[e1]-(n2), (n2)-[e2]-(n3), (n2)-[e3]-(n4)
+WHERE n1.ID = ''75FT1IPlCYCs5DAYbR9mjE'' and n3.TYPE = ''ALBUM''
+ RETURN n1.NAME AS N1_ID, n2.NAME as N2_ID, n3.NAME AS N3_ID, n4.NAME AS N4_ID' ))

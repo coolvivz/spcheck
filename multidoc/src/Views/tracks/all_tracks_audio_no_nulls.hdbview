@@ -1,0 +1,3 @@
+view "json.Views.tracks::all_tracks_audio_no_nulls" as (
+    select * from "json.Views.tracks::tracks_audio_combined_all"
+    where "danceability" is not NULL)

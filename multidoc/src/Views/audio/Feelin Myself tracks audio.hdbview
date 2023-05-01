@@ -1,0 +1,3 @@
+view "json.Views.audio::Feelin Myself tracks audio" as (
+    select "id" as id, "acousticness", "danceability", "genres", "energy","key","loudness","mode","speechiness", "instrumentalness", "liveness", "valence", "tempo"
+    from "json.synonyms::Feelin Myself_AUD"  );

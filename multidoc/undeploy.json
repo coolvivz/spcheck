@@ -1,0 +1,31 @@
+[
+    "src/Views/audio/80s Party tracks audio.hdbview",
+    "src/Views/audio/90s Workout tracks audio.hdbview",
+    "src/Views/audio/Beast Mode tracks audio.hdbview",
+    "src/Views/audio/Cardio tracks audio.hdbview",
+    "src/Views/audio/Bling Era tracks audio.hdbview",
+    "src/Views/audio/Classic Rock Workout tracks audio.hdbview",
+    "src/Views/audio/Corridos Tumbados tracks audio.hdbview",
+    "src/Views/audio/Country Cardio tracks audio.hdbview",
+    "src/Views/audio/Country Gaming tracks audio.hdbview",
+    "src/Views/audio/Cumbia Sonider tracks audio.hdbview",
+    "src/Views/audio/Daily Lift tracks audio.hdbview",
+    "src/Views/audio/Dance Party tracks audio.hdbview",
+    "src/Views/audio/Dance Pop Hits tracks audio.hdbview",
+    "src/Views/audio/EDM tracks audio.hdbview",
+    "src/Views/audio/FIFA 23 Official Soundtrack tracks audio.hdbview",
+    "src/Views/audio/Feeling Accomplished tracks audio.hdbview",
+    "src/Views/audio/Generacian Verde tracks audio.hdbview",
+    "src/Views/audio/Get Turnt tracks audio.hdbview",
+    "src/Views/audio/GirlsNight tracks audio.hdbview",
+    "src/Views/audio/gymcore tracks audio.hdbview",
+
+    "src/cvs/edges.hdbcalculationview",
+    "src/cvs/edges_table.hdbcalculationview",
+    "src/cvs/nodes.hdbcalculationview",
+    "src/Views/edges.hdbcalculationview",
+    "src/Views/edges_table.hdbcalculationview",
+    "src/Views/nodes.hdbcalculationview",
+    "src/Views/nodescopy.hdbcalculationview"
+
+]

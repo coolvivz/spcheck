@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.cvs::edges_transformation" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="edges.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="json.Views.tracks::tracks_audio_combined_all">
+    <resourceUri>json.Views.tracks::tracks_audio_combined_all</resourceUri>
+  </DataSource>
+  <DataSource id="track_artist$$$$json.Views.tracks::tracks_audio_combined_all$$">
+    <resourceUri>json.Views.tracks::tracks_audio_combined_all</resourceUri>
+  </DataSource>
+  <DataSource id="album_tracks$$$$json.Views.tracks::tracks_audio_combined_all$$">
+    <resourceUri>json.Views.tracks::tracks_audio_combined_all</resourceUri>
+  </DataSource>
+  <DataSource id="json.Views.albums::albums_all">
+    <resourceUri>json.Views.albums::albums_all</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AggregationView" id="playlist_tracks">
+    <viewAttributes>
+      <viewAttribute id="playlist_id"/>
+      <viewAttribute id="track_id"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Relationship" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>'contains'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="json.Views.tracks::tracks_audio_combined_all">
+      <mapping xsi:type="Calculation:AttributeMapping" target="track_id" source="TRACK_ID"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="track_artist">
+    <viewAttributes>
+      <viewAttribute id="TRACK_ID"/>
+      <viewAttribute id="artist_id"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Relationship" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>'iscreatedby'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="track_artist$$$$json.Views.tracks::tracks_audio_combined_all$$">
+      <mapping xsi:type="Calculation:AttributeMapping" target="artist_id" source="id"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="album_tracks">
+    <viewAttributes>
+      <viewAttribute id="track_album_id"/>
+      <viewAttribute id="TRACK_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Relationship" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>'contains'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="album_tracks$$$$json.Views.tracks::tracks_audio_combined_all$$">
+      <mapping xsi:type="Calculation:AttributeMapping" target="track_album_id" source="track.album.id"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="album_artist">
+    <viewAttributes>
+      <viewAttribute id="ALBUM_ID"/>
+      <viewAttribute id="ARTIST_ID"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="Relationship" datatype="NVARCHAR" length="13" expressionLanguage="SQL">
+        <formula>'iscreatedby'</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <restrictedViewAttributes/>
+    <input node="json.Views.albums::albums_all"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+      <viewAttribute id="Relationship"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="playlist_tracks">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="playlist_id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="track_id"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="Relationship"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="track_artist">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="TRACK_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="artist_id"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="Relationship"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="album_tracks">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="track_album_id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="TRACK_ID"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="Relationship"/>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="album_artist">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="ALBUM_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="ARTIST_ID"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+      <viewAttribute id="Relationship"/></viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="TARGET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Relationship" source="Relationship"/></input>
+    <input node="Projection_3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="TARGET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Relationship" source="Relationship"/></input>
+    <input node="Projection_4" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="TARGET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Relationship" source="Relationship"/></input>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:WindowFunctionView" id="WindowFunction_1">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+      <viewAttribute id="Relationship"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="SOURCE" source="SOURCE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TARGET" source="TARGET"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="Relationship" source="Relationship"/>
+    </input>
+    <function name="ROW_NUMBER"/>
+    <windowFunctionResultColumn>rank_id</windowFunctionResultColumn>
+    <orderAttributes>
+      <orderAttribute direction="ASC">SOURCE</orderAttribute>
+    </orderAttributes>
+    <partitionAttributes/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="SOURCE"/>
+      <viewAttribute id="TARGET"/>
+      <viewAttribute id="Relationship"/>
+      <viewAttribute id="rank_id"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="ID" datatype="INTEGER" expressionLanguage="SQL">
+        <formula>&quot;rank_id&quot;</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="WindowFunction_1"/>
+    <filter>&quot;TARGET&quot; NOT IN ('3wdwWQXJbqpJJbMdp7KfEJ',
+'7ndSXQRalCxfeL0rzd4YXa',
+'0360rTDeUjEyBXaz2Ki00a',
+'3HLApxqtvULlffnRnW88O8',
+'2NHU1Yofdj3R2UTLvGT94z',
+'4P0eS4QK9qeUhqrapGsJKS',
+'0ZPcdLXxkMbeJUYygnUyY7',
+'4qBgvVog0wzW75IQ48mU7v',
+'5xyj3Rm47auSIRXZrOpBOk',
+'0fcTxZvZ6NBUI8Cye4Db8k',
+'09HxEXUwV0FkmZnBqrJfbM',
+'5XIpstAqKCvYlJbWK2fqJQ',
+'7wXT4VyenbT42oXNq6CHIu',
+'6u4jLGLPuarS3i2XWHVxoS',
+'7FjEJwP9sL4KaPpUT9qEe0',
+'5PWq4Rbjlar7JG2uHacbKW',
+'5MP9bH9aUryiKQeUvABLIU',
+'2YF8oM4cDvaP7tCpe4KQvi',
+'6xBZgSMsnKVmaAxzWEwMSD',
+'6m3l8oNDOGE3vo66Agi9M4',
+'6dUQZEabny6GEeOayKuk4O',
+'4a7mPbeyyu6OIO7xoJCiBH',
+'2kxP07DLgs4xlWz8YHlvfh',
+'6hyMWrxGBsOx6sWcVj1DqP',
+'0y33MPw94ln3pVCaRYAfE8',
+'3QFiymmbJlVBPpnrOatEAk',
+'2S0OAEIXVglA0Zd9wXNKN8',
+'1lpOgw56wZLDa8gaP6bSIs',
+'2Pv9ZGQqEflbdavLk6rr0t',
+'3YANLRO72GrnnFvM4C8faY',
+'6NeoLSPGwJLfeisvM36SMi',
+'4Q6CxLeEfgULmUCUEVxApw',
+'1xNmvlEiICkRlRGqlNFZ43',
+'05S6yFOzexsgurWstJlBqK',
+'5IFCkqu9J6xdWeYMk5I889',
+'021kTgdJSDcXOkT3cvIKyP',
+'3IaKn0ExWTMPqa0mscUYw3',
+'1sJlemCQCWgGk8yUTT79Fo',
+'6lGCmXtqSxze8o2KEfYD6D',
+'16mcbsKWKfaPgtPLXACWC4',
+'4qKpLkR911SUlnd4HAtF79',
+'4kwEd1P9j15ZqUVP5zK7Pv',
+'3jO5UGHrEzfd5YIamfs7Ir')</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_5">
+  <attributes>
+    <attribute id="SOURCE" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="SOURCE"/>
+      <keyMapping columnObjectName="Projection_5" columnName="SOURCE"/>
+    </attribute>
+    <attribute id="TARGET" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TARGET"/>
+      <keyMapping columnObjectName="Projection_5" columnName="TARGET"/>
+    </attribute>
+    <attribute id="Relationship" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="Relationship"/>
+      <keyMapping columnObjectName="Projection_5" columnName="Relationship"/>
+    </attribute>
+    <attribute id="ID" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ID"/>
+      <keyMapping columnObjectName="Projection_5" columnName="ID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="584" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="playlist_tracks" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="761"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="track_artist" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="722" y="761"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="album_tracks" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="761"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="album_artist" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="761"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="307" y="636"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="727" y="636"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="517" y="636"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="636"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="446"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="WindowFunction_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="341"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="584" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

@@ -1,0 +1,18 @@
+PROCEDURE "json.procedures::load_graph_tables"()
+
+LANGUAGE SQLSCRIPT 
+AS
+BEGIN
+
+
+    insert into "json.tables::NODES"
+    SELECT "ID", "TYPE", "NAME", "CATEGORY", "RELEASE_DATE", "TOTAL_TRACKS", "genres", "POPULARITY",	"DURATION_MS",	"danceability","acousticness"
+    FROM  "json.cvs::nodes_transformation"
+    where NAME <> '';
+
+    insert into "json.tables::EDGES"
+    SELECT "ID", "SOURCE","TARGET", "Relationship"
+    FROM  "json.cvs::edges_transformation";
+    
+END;
+

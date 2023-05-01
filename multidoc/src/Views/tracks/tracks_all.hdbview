@@ -1,0 +1,123 @@
+ view "json.Views.tracks::tracks_all" as (
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::80s Party tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::90s Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::All The Feels tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::BBE tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Bass Arcade tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Beast Mode tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Bling Era tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Cardio tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Chill Tracks tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Classic Rock Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Corridos Tumbados tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Country Cardio tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Country Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Cumbia Sonider tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::DOPAMINE tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Daily Lift tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Dance Party tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Dance Pop Hits tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::EDM tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Energy Booster Hip-Hop tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::FIFA 23 Official Soundtrack tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Feel-Good Indie Rock tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Feelin Myself tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Feeling Accomplished tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Generacian Verde tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Get Turnt tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::GirlsNight tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Good Vibes tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Happy Beats tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Have a Great Day! tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Hip Hop Controller tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Hype tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Indie Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Jock Jams tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::K-Pop Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Latin Party Anthems tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::League of Legends Lil Nas X Takeover tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Levitate tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Locked In tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Mellow Evening tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Mexican Party Anthems tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Mood Booster tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Now Loading tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Party Hits tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Party Hits 2000s tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Party Hits 2010s tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Perreo Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Pixel Garden tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Pop Party tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Power Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Power Hour tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Pumped Pop tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Rap Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Retrowave // Outrun tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Run Wild tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Sad Indie tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Songs to Sing in the Shower tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::StartSelect Kratos and Atreus tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Throwback Jams tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Throwback Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Top Gaming Tracks tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Trophy Room tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Ultimate Pop Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Ultimate Rock Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Ultra Gaming tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Video Game Soundtracks tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Villain Mode tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Workout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Workout Twerkout tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::Your Favorite Coffeehouse tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::gymcore tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::midnite storm tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::my life is a movie tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::phonk tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::pop songs we can all scream tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::sad hour tracks"union all
+    select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name" from "json.Views.tracks::webcore tracks"
+    
+    )
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

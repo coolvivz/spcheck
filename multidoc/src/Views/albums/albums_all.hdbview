@@ -1,0 +1,123 @@
+    view "json.Views.albums::albums_all" as (
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::80s Party albums" union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::90s Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::All The Feels albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::BBE albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Bass Arcade albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Beast Mode albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Bling Era albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Cardio albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Chill Tracks albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Classic Rock Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Corridos Tumbados albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Country Cardio albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Country Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Cumbia Sonider albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::DOPAMINE albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Daily Lift albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Dance Party albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Dance Pop Hits albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::EDM albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Energy Booster Hip-Hop albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::FIFA 23 Official Soundtrack albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Feel-Good Indie Rock albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Feelin Myself albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Feeling Accomplished albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Generacian Verde albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Get Turnt albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::GirlsNight albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Good Vibes albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Happy Beats albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Have a Great Day! albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Hip Hop Controller albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Hype albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Indie Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Jock Jams albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::K-Pop Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Latin Party Anthems albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::League of Legends Lil Nas X Takeover albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Levitate albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Locked In albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Mellow Evening albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Mexican Party Anthems albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Mood Booster albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Now Loading albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Party Hits albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Party Hits 2000s albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Party Hits 2010s albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Perreo Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Pixel Garden albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Pop Party albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Power Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Power Hour albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Pumped Pop albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Rap Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Retrowave // Outrun albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Run Wild albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Sad Indie albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Songs to Sing in the Shower albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::StartSelect Kratos and Atreus albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Throwback Jams albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Throwback Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Top Gaming Tracks albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Trophy Room albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Ultimate Pop Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Ultimate Rock Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Ultra Gaming albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Video Game Soundtracks albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Villain Mode albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Workout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Workout Twerkout albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::Your Favorite Coffeehouse albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::gymcore albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::midnite storm albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::my life is a movie albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::phonk albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::pop songs we can all scream albums"union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::sad hour albums" union all
+    select album_id, "type2",  album_name, release_date, total_tracks, artist_id,  artist_name from "json.Views.albums::webcore albums"
+    
+    )
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

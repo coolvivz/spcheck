@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.Views::CV_TOP_ALL" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
 <descriptions defaultDescription="CV_TOP_ALL"/>
-<localVariables/>
+<localVariables>
+  <variable id="VAR_ALBUM_NAME">
+    <descriptions defaultDescription="VAR_ALBUM_NAME"/>
+    <variableProperties datatype="NVARCHAR" length="5000" scale="NaN" defaultExpressionLanguage="SQL">
+      <valueDomain type="AttributeValue">
+        <attribute name="ALBUM_NAME"/>
+      </valueDomain>
+      <selection multiLine="true" type="SingleValue"/>
+      <defaultRange lowValue="LET GO" operator="EQ" including="true"/>
+      <defaultRange lowValue="Harry&apos;s House" operator="EQ" including="true"/>
+    </variableProperties>
+  </variable>
+</localVariables>
 <variableMappings/>
 <dataSources>
   <DataSource id="json::TOPALL2">
@@ -27,6 +39,7 @@
     </attribute>
     <attribute id="ALBUM_NAME" order="4" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ALBUM_NAME"/>
+      <localVariable>VAR_ALBUM_NAME</localVariable>
       <keyMapping columnObjectName="TOPALL2" columnName="ALBUM NAME"/>
     </attribute>
     <attribute id="IMAGE" order="5" displayAttribute="false" attributeHierarchyActive="false">
@@ -64,7 +77,8 @@
   <calculatedMeasures>
     <measure id="Speechiness_Level" order="12" aggregationType="sum" measureType="simple" datatype="DECIMAL" length="13" scale="4" expressionLanguage="SQL" restrictionExpressionLanguage="SQL">
       <formula>&quot;SPEECHINESS&quot; - (0.33)</formula>
-    </measure>
+    
+      </measure>
   </calculatedMeasures>
   <restrictedMeasures/>
   <localDimensions/>
@@ -72,7 +86,9 @@
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
-      <upperLeftCorner x="40" y="85"/>
+      <upperLeftCorner x="92" y="112"/>
+    
+      <rectangleSize width="160"/>
     </shape></shapes>
 </layout>
 </Calculation:scenario>

@@ -1,0 +1,3 @@
+view "json.Views.tracks::Ultra Gaming tracks" as (
+select  "playlist_id", "type1", "type3", "track"."id" as track_id,"track"."name" as track_name, "track"."popularity" as popularity, "track"."duration_ms" as duration_ms, "track"."album"."id", a."id", a."name"
+from "json.synonyms::Ultra Gaming"UNNEST "track"."artists" as a  );

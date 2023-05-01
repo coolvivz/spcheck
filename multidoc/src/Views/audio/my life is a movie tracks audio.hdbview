@@ -1,0 +1,3 @@
+view "json.Views.audio::my life is a movie tracks audio" as (
+    select "id" as id, "acousticness", "danceability", "genres", "energy","key","loudness","mode","speechiness", "instrumentalness", "liveness", "valence", "tempo"
+    from "json.synonyms::my life is a movie_AUD"  );

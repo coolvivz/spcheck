@@ -1,0 +1,3 @@
+view "json.Views.audio::Ultimate Rock Gaming tracks audio" as (
+    select "id" as id, "acousticness", "danceability", "genres", "energy","key","loudness","mode","speechiness", "instrumentalness", "liveness", "valence", "tempo"
+    from "json.synonyms::Ultimate Rock Gaming_AUD"  );

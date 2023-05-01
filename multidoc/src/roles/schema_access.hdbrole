@@ -1,0 +1,14 @@
+{
+  "role": {
+    "name": "json.roles::schema_access",
+    "schema_privileges": [
+      {
+        "privileges": [
+          "SELECT",
+          "SELECT METADATA",
+          "EXECUTE"
+        ]
+      }
+    ]
+  }
+}

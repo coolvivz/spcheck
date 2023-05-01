@@ -1,0 +1,26 @@
+{
+  "json.synonyms::PLAYLIST_CATEGORY_GAMING": {
+    "target": {
+      "object": "PLAYLIST_CATEGORY_GAMING",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::PLAYLIST_CATEGORY_MOOD": {
+    "target": {
+      "object": "PLAYLIST_CATEGORY_MOOD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::PLAYLIST_CATEGORY_PARTY": {
+    "target": {
+      "object": "PLAYLIST_CATEGORY_PARTY",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::PLAYLIST_CATEGORY_WORKOUT": {
+    "target": {
+      "object": "PLAYLIST_CATEGORY_WORKOUT",
+      "schema": "SPOTIFY"
+    }
+  }
+}

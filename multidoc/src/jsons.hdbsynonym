@@ -89,9 +89,9 @@
       "schema": "SPOTIFY"
     }
   },
-  "json::EDGES_staging": {
+  "json::NODES_FINAL": {
     "target": {
-      "object": "EDGES_staging",
+      "object": "NODES_FINAL",
       "schema": "SPOTIFY"
     }
   }

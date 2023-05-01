@@ -1,0 +1,28 @@
+FUNCTION "json.tablefunctions::genres" ( IN genre NVARCHAR(1000))
+ RETURNS TABLE ("playlist_category" NVARCHAR(1000),
+	       "playlist_name" NVARCHAR(1000),
+	       "number_of_tracks" INTEGER)
+
+         LANGUAGE SQLSCRIPT READS SQL DATA AS
+BEGIN
+
+    DECLARE o_res TABLE ("playlist_category" NVARCHAR(1000),
+    "playlist_name" NVARCHAR(1000),
+    "number_of_tracks" INTEGER);
+
+    EXECUTE IMMEDIATE ' 
+   SELECT * FROM OPENCYPHER_TABLE (
+     GRAPH WORKSPACE "json.graphs::SPOTIFY"
+     QUERY ''
+      MATCH   (a)-[e]-(b)
+        WHERE   a.GENRE contains '''''||:genre||'''''
+        and b.TYPE = ''Playlist''
+         RETURN  b.PLAYLISTCATEGORY as playlist_category, 
+        b.NAME as playlist_name, count(a.ID) as num_tracks''
+)' INTO o_res;
+
+return select * from :o_res;
+
+
+
+END;

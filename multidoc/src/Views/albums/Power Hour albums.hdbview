@@ -1,0 +1,3 @@
+view "json.Views.albums::Power Hour albums" as  (
+select "track"."album"."id" as album_id, "type2", "track"."album"."name" as album_name, "track"."album"."release_date" as release_date,"track"."album"."total_tracks" as total_tracks,  a."id" as artist_id, a."name" as artist_name 
+from "json.synonyms::Power Hour"  unnest "track"."album"."artists" as a);

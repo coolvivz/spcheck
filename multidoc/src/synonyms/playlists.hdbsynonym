@@ -1,0 +1,632 @@
+{
+  "json.synonyms::80s Party": {
+    "target": {
+      "object": "80s Party",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::90s Workout": {
+    "target": {
+      "object": "90s Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::All The Feels": {
+    "target": {
+      "object": "All The Feels",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::All The Feels_AUD": {
+    "target": {
+      "object": "All The Feels_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::BBE": {
+    "target": {
+      "object": "BBE",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::BBE_AUD": {
+    "target": {
+      "object": "BBE_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Bass Arcade": {
+    "target": {
+      "object": "Bass Arcade",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Bass Arcade_AUD": {
+    "target": {
+      "object": "Bass Arcade_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Beast Mode": {
+    "target": {
+      "object": "Beast Mode",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Bling Era": {
+    "target": {
+      "object": "Bling Era",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Cardio": {
+    "target": {
+      "object": "Cardio",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Chill Tracks": {
+    "target": {
+      "object": "Chill Tracks",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Chill Tracks_AUD": {
+    "target": {
+      "object": "Chill Tracks_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Classic Rock Workout": {
+    "target": {
+      "object": "Classic Rock Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Corridos Tumbados": {
+    "target": {
+      "object": "Corridos Tumbados",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Country Cardio": {
+    "target": {
+      "object": "Country Cardio",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Country Gaming": {
+    "target": {
+      "object": "Country Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Cumbia Sonidera": {
+    "target": {
+      "object": "Cumbia Sonidera",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::DOPAMINE": {
+    "target": {
+      "object": "DOPAMINE",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::DOPAMINE_AUD": {
+    "target": {
+      "object": "DOPAMINE_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Daily Lift": {
+    "target": {
+      "object": "Daily Lift",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Dance Party": {
+    "target": {
+      "object": "Dance Party",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Dance Pop Hits": {
+    "target": {
+      "object": "Dance Pop Hits",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::EDM": {
+    "target": {
+      "object": "EDM",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Energy Booster Hip-Hop": {
+    "target": {
+      "object": "Energy Booster: Hip-Hop",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Energy Booster Hip-Hop_AUD": {
+    "target": {
+      "object": "Energy Booster: Hip-Hop_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::FIFA 23 Official Soundtrack": {
+    "target": {
+      "object": "FIFA 23 Official Soundtrack",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Feel-Good Indie Rock": {
+    "target": {
+      "object": "Feel-Good Indie Rock",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Feel-Good Indie Rock_AUD": {
+    "target": {
+      "object": "Feel-Good Indie Rock_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Feelin Myself": {
+    "target": {
+      "object": "Feelin Myself",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Feelin Myself_AUD": {
+    "target": {
+      "object": "Feelin Myself_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Feeling Accomplished": {
+    "target": {
+      "object": "Feeling Accomplished",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Generacian Verde": {
+    "target": {
+      "object": "GeneraciÃ³n Verde",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Get Turnt": {
+    "target": {
+      "object": "Get Turnt",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::GirlsNight": {
+    "target": {
+      "object": "GirlsNight",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Good Vibes": {
+    "target": {
+      "object": "Good Vibes",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Good Vibes_AUD": {
+    "target": {
+      "object": "Good Vibes_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Happy Beats": {
+    "target": {
+      "object": "Happy Beats",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Happy Beats_AUD": {
+    "target": {
+      "object": "Happy Beats_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Have a Great Day!": {
+    "target": {
+      "object": "Have a Great Day!",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Have a Great Day!_AUD": {
+    "target": {
+      "object": "Have a Great Day!_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Hip Hop Controller": {
+    "target": {
+      "object": "Hip Hop Controller",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Hype": {
+    "target": {
+      "object": "Hype",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Indie Gaming": {
+    "target": {
+      "object": "Indie Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Jock Jams": {
+    "target": {
+      "object": "Jock Jams",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::K-Pop Gaming": {
+    "target": {
+      "object": "K-Pop Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Latin Party Anthems": {
+    "target": {
+      "object": "Latin Party Anthems",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::League of Legends Lil Nas X Takeover": {
+    "target": {
+      "object": "League of Legends Lil Nas X Takeover",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Levitate": {
+    "target": {
+      "object": "Levitate",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Levitate_AUD": {
+    "target": {
+      "object": "Levitate_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Locked In": {
+    "target": {
+      "object": "Locked In",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Locked In_AUD": {
+    "target": {
+      "object": "Locked In_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Mellow Evening": {
+    "target": {
+      "object": "Mellow Evening",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Mellow Evening_AUD": {
+    "target": {
+      "object": "Mellow Evening_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Mexican Party Anthems": {
+    "target": {
+      "object": "Mexican Party Anthems",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Mood Booster": {
+    "target": {
+      "object": "Mood Booster",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Mood Booster_AUD": {
+    "target": {
+      "object": "Mood Booster_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Now Loading": {
+    "target": {
+      "object": "Now Loading.",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Party Hits": {
+    "target": {
+      "object": "Party Hits",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Party Hits 2000s": {
+    "target": {
+      "object": "Party Hits 2000s",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Party Hits 2010s": {
+    "target": {
+      "object": "Party Hits 2010s",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Perreo Workout": {
+    "target": {
+      "object": "Perreo Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Pixel Garden": {
+    "target": {
+      "object": "Pixel Garden",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Pop Party": {
+    "target": {
+      "object": "Pop Party",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Power Gaming": {
+    "target": {
+      "object": "Power Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Power Gaming_AUD": {
+    "target": {
+      "object": "Power Gaming_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Power Hour": {
+    "target": {
+      "object": "Power Hour",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Pumped Pop": {
+    "target": {
+      "object": "Pumped Pop",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Rap Workout": {
+    "target": {
+      "object": "Rap Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Retrowave // Outrun": {
+    "target": {
+      "object": "Retrowave // Outrun",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Run Wild": {
+    "target": {
+      "object": "Run Wild",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Sad Indie": {
+    "target": {
+      "object": "Sad Indie",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Sad Indie_AUD": {
+    "target": {
+      "object": "Sad Indie_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Songs to Sing in the Shower": {
+    "target": {
+      "object": "Songs to Sing in the Shower",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Songs to Sing in the Shower_AUD": {
+    "target": {
+      "object": "Songs to Sing in the Shower_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::StartSelect Kratos and Atreus": {
+    "target": {
+      "object": "StartSelect: Kratos and Atreus ",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Throwback Jams": {
+    "target": {
+      "object": "Throwback Jams",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Throwback Workout": {
+    "target": {
+      "object": "Throwback Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Top Gaming Tracks": {
+    "target": {
+      "object": "Top Gaming Tracks",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Top Gaming Tracks_AUD": {
+    "target": {
+      "object": "Top Gaming Tracks_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Trophy Room": {
+    "target": {
+      "object": "Trophy Room",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Trophy Room_AUD": {
+    "target": {
+      "object": "Trophy Room_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Ultimate Pop Gaming": {
+    "target": {
+      "object": "Ultimate Pop Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Ultimate Rock Gaming": {
+    "target": {
+      "object": "Ultimate Rock Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Ultimate Rock Gaming_AUD": {
+    "target": {
+      "object": "Ultimate Rock Gaming_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Ultra Gaming": {
+    "target": {
+      "object": "Ultra Gaming",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Ultra Gaming_AUD": {
+    "target": {
+      "object": "Ultra Gaming_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Video Game Soundtracks": {
+    "target": {
+      "object": "Video Game Soundtracks",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Villain Mode": {
+    "target": {
+      "object": "Villain Mode",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Villain Mode_AUD": {
+    "target": {
+      "object": "Villain Mode_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Workout": {
+    "target": {
+      "object": "Workout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Workout Twerkout": {
+    "target": {
+      "object": "Workout Twerkout",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Your Favorite Coffeehouse": {
+    "target": {
+      "object": "Your Favorite Coffeehouse",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::Your Favorite Coffeehouse_AUD": {
+    "target": {
+      "object": "Your Favorite Coffeehouse_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::gymcore": {
+    "target": {
+      "object": "gymcore",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::midnite storm": {
+    "target": {
+      "object": "mid:nite storm ",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::midnite storm_AUD": {
+    "target": {
+      "object": "mid:nite storm _AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::my life is a movie": {
+    "target": {
+      "object": "my life is a movie",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::my life is a movie_AUD": {
+    "target": {
+      "object": "my life is a movie_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::phonk": {
+    "target": {
+      "object": "phonk",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::phonk_AUD": {
+    "target": {
+      "object": "phonk_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::pop songs we can all scream": {
+    "target": {
+      "object": "pop songs we can all scream",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::sad hour": {
+    "target": {
+      "object": "sad hour",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::sad hour_AUD": {
+    "target": {
+      "object": "sad hour_AUD",
+      "schema": "SPOTIFY"
+    }
+  },
+  "json.synonyms::webcore": {
+    "target": {
+      "object": "webcore",
+      "schema": "SPOTIFY"
+    }
+  }
+}

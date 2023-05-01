@@ -1,0 +1,3 @@
+view "json.Views.audio::Sad Indie tracks audio" as (
+    select "id" as id, "acousticness", "danceability", "genres", "energy","key","loudness","mode","speechiness", "instrumentalness", "liveness", "valence", "tempo"
+    from "json.synonyms::Sad Indie_AUD"  );

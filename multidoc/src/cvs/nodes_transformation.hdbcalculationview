@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.cvs::nodes_transformation" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="nodes_transformation.hdbcalculationview"/>
+<localVariables>
+  <variable id="IP_RELEASE_DATE" parameter="true">
+    <descriptions defaultDescription=""/>
+    <variableProperties datatype="DATE" mandatory="false">
+      <valueDomain type="empty"/>
+      <selection multiLine="false" type="SingleValue"/>
+    </variableProperties>
+  </variable>
+</localVariables>
+<variableMappings/>
+<dataSources>
+  <DataSource id="json.Views.playlists::playlists_all">
+    <resourceUri>json.Views.playlists::playlists_all</resourceUri>
+  </DataSource>
+  <DataSource id="json.Views.tracks::tracks_audio_combined_all">
+    <resourceUri>json.Views.tracks::tracks_audio_combined_all</resourceUri>
+  </DataSource>
+  <DataSource id="tracks$$$$json.Views.tracks::tracks_audio_combined_all$$">
+    <resourceUri>json.Views.tracks::tracks_audio_combined_all</resourceUri>
+  </DataSource>
+  <DataSource id="json.Views.albums::albums_all">
+    <resourceUri>json.Views.albums::albums_all</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:AggregationView" id="playlists">
+    <viewAttributes>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="PLAYLIST_ID"/>
+      <viewAttribute id="PLAYLIST_NAME"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="json.Views.playlists::playlists_all"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="artists">
+    <viewAttributes>
+      <viewAttribute id="type3"/>
+      <viewAttribute id="id"/>
+      <viewAttribute id="name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="json.Views.tracks::tracks_audio_combined_all"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="tracks">
+    <viewAttributes>
+      <viewAttribute id="TRACK_ID"/>
+      <viewAttribute id="type1"/>
+      <viewAttribute id="TRACK_NAME"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="tracks$$$$json.Views.tracks::tracks_audio_combined_all$$"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:AggregationView" id="albums" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ALBUM_ID"/>
+      <viewAttribute id="ALBUM_NAME"/>
+      <viewAttribute id="type2"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="json.Views.albums::albums_all"/>
+    <filter>if(isNULL('$$IP_RELEASE_DATE$$') or '$$IP_RELEASE_DATE$$'= '', '1997-01-01','$$IP_RELEASE_DATE$$')</filter>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="PLAYLIST_ID"/>
+      <viewAttribute id="PLAYLIST_NAME"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="playlists"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_2">
+    <viewAttributes>
+      <viewAttribute id="type3"/>
+      <viewAttribute id="id"/>
+      <viewAttribute id="name"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="artists"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_3">
+    <viewAttributes>
+      <viewAttribute id="TRACK_ID"/>
+      <viewAttribute id="type1"/>
+      <viewAttribute id="TRACK_NAME"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="tracks"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_4">
+    <viewAttributes>
+      <viewAttribute id="ALBUM_ID"/>
+      <viewAttribute id="ALBUM_NAME"/>
+      <viewAttribute id="type2"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="albums"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute datatype="NVARCHAR" length="5000" id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+      <viewAttribute id="CATEGORY"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="IDforRANK" datatype="NVARCHAR" length="5000" expressionLanguage="SQL">
+        <formula>&quot;ID&quot;</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Projection_2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="id"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="name"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="type3"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="POPULARITY" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DURATION_MS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="acousticness" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="danceability" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="genres" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="RELEASE_DATE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TOTAL_TRACKS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CATEGORY" null="true" value=""/>
+    </input>
+    <input node="Projection_3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="TRACK_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="TRACK_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="type1"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POPULARITY" source="POPULARITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DURATION_MS" source="DURATION_MS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="acousticness" source="acousticness"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="danceability" source="danceability"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="genres"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="RELEASE_DATE" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="TOTAL_TRACKS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CATEGORY" null="true" value=""/>
+    </input>
+    <input node="Projection_4" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ALBUM_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="ALBUM_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="type2"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="POPULARITY" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DURATION_MS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="acousticness" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="danceability" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="genres" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_TRACKS" source="TOTAL_TRACKS"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="CATEGORY" null="true" value=""/>
+    </input>
+    <input node="Projection_1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="PLAYLIST_ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="PLAYLIST_NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="POPULARITY" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="DURATION_MS" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="acousticness" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="danceability" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="genres" null="true" value=""/>
+      <mapping xsi:type="Calculation:ConstantAttributeMapping" target="RELEASE_DATE" null="true" value=""/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_TRACKS" source="TOTAL_TRACKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORY" source="CATEGORY"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_6">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="IDforRANK"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Union_1"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:WindowFunctionView" id="WindowFunction_1" dynamicOrderAttributes="false">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="IDforRANK"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="Projection_6">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ID" source="ID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NAME" source="NAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TYPE" source="TYPE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POPULARITY" source="POPULARITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DURATION_MS" source="DURATION_MS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="acousticness" source="acousticness"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="danceability" source="danceability"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="genres"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="RELEASE_DATE" source="RELEASE_DATE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL_TRACKS" source="TOTAL_TRACKS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORY" source="CATEGORY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="IDforRANK" source="IDforRANK"/>
+    </input>
+    <function name="ROW_NUMBER"/>
+    <windowFunctionResultColumn>row_num</windowFunctionResultColumn>
+    <orderAttributes>
+      <orderAttribute direction="ASC">ID</orderAttribute>
+    </orderAttributes>
+    <partitionAttributes>
+      <partitionAttribute>IDforRANK</partitionAttribute>
+    </partitionAttributes>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_5" filterExpressionLanguage="SQL">
+    <viewAttributes>
+      <viewAttribute id="ID"/>
+      <viewAttribute id="NAME"/>
+      <viewAttribute id="TYPE"/>
+      <viewAttribute id="POPULARITY"/>
+      <viewAttribute id="DURATION_MS"/>
+      <viewAttribute id="acousticness"/>
+      <viewAttribute id="danceability"/>
+      <viewAttribute id="genres"/>
+      <viewAttribute id="RELEASE_DATE"/>
+      <viewAttribute id="TOTAL_TRACKS"/>
+      <viewAttribute id="CATEGORY"/>
+      <viewAttribute id="row_num"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="WindowFunction_1"/>
+    <filter>&quot;row_num&quot; = 1</filter>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_5">
+  <attributes>
+    <attribute id="ID" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="id"/>
+      <keyMapping columnObjectName="Projection_5" columnName="ID"/>
+    </attribute>
+    <attribute id="NAME" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="name"/>
+      <keyMapping columnObjectName="Projection_5" columnName="NAME"/>
+    </attribute>
+    <attribute id="TYPE" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="type3"/>
+      <keyMapping columnObjectName="Projection_5" columnName="TYPE"/>
+    </attribute>
+    <attribute id="POPULARITY" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POPULARITY"/>
+      <keyMapping columnObjectName="Projection_5" columnName="POPULARITY"/>
+    </attribute>
+    <attribute id="DURATION_MS" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="DURATION_MS"/>
+      <keyMapping columnObjectName="Projection_5" columnName="DURATION_MS"/>
+    </attribute>
+    <attribute id="acousticness" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="acousticness"/>
+      <keyMapping columnObjectName="Projection_5" columnName="acousticness"/>
+    </attribute>
+    <attribute id="danceability" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="danceability"/>
+      <keyMapping columnObjectName="Projection_5" columnName="danceability"/>
+    </attribute>
+    <attribute id="genres" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="genres"/>
+      <keyMapping columnObjectName="Projection_5" columnName="genres"/>
+    </attribute>
+    <attribute id="RELEASE_DATE" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="RELEASE_DATE"/>
+      <keyMapping columnObjectName="Projection_5" columnName="RELEASE_DATE"/>
+    </attribute>
+    <attribute id="TOTAL_TRACKS" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="TOTAL_TRACKS"/>
+      <keyMapping columnObjectName="Projection_5" columnName="TOTAL_TRACKS"/>
+    </attribute>
+    <attribute id="CATEGORY" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORY"/>
+      <keyMapping columnObjectName="Projection_5" columnName="CATEGORY"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="610" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="playlists" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="204" y="919"/>
+      <rectangleSize height="30" width="263"/>
+    </shape>
+    <shape expanded="true" modelObjectName="artists" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="807" y="902"/>
+      <rectangleSize height="30" width="333"/>
+    </shape>
+    <shape expanded="true" modelObjectName="tracks" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="488" y="919"/>
+      <rectangleSize height="30" width="301"/>
+    </shape>
+    <shape expanded="true" modelObjectName="albums" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="-94" y="913"/>
+      <rectangleSize height="30" width="218"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="307" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="727" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="517" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_4" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="781"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="591"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_6" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="496" y="486"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="WindowFunction_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="587" y="361"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_5" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="587" y="237"/>
+      <rectangleSize height="30" width="160"/>
+    </shape></shapes>
+</layout>
+</Calculation:scenario>

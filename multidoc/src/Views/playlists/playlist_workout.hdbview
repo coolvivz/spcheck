@@ -1,0 +1,4 @@
+view "json.Views.playlists::playlists_workout" as (
+	select "playlists"."category" as category,"playlists"."type" as type, p."id" as playlist_id, p."name" as playlist_name, p."description" as description, p."tracks"."total" as total_tracks 
+	 from "json.synonyms::PLAYLIST_CATEGORY_WORKOUT" unnest "playlists"."items" as p
+);

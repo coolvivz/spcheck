@@ -1,0 +1,7 @@
+view "json.Views.tracks::tracks_audio_combined_all" as (
+with x as (select  "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name"
+from "json.Views.tracks::tracks_all"), y as (select "ID" , "acousticness", "danceability", "genres", "energy","key","loudness","mode","speechiness", 
+"instrumentalness", "liveness", "valence", "tempo" from "json.Views.audio::tracks_audio_all")  
+select "playlist_id", "type1", "type3",  track_id, track_name,   popularity,  duration_ms, "track.album.id", "id", "name", "acousticness", 
+"danceability", "genres", "energy","key","loudness","mode","speechiness", "instrumentalness", "liveness", "valence", "tempo" 
+from x left outer join y on x.track_id = y.ID)
