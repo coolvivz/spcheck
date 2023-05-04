@@ -1,0 +1,5 @@
+TYPE "json.tabletypes::TT_EDGES_NEI" AS TABLE(
+	"ID" INT,
+	"SOURCE" NVARCHAR(1000),
+	"TARGET" NVARCHAR(1000)
+);

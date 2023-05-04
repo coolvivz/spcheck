@@ -1,0 +1,4 @@
+TYPE "json.tabletypes::TT_test" AS TABLE(
+	"ID" NVARCHAR(1000),
+	"NAME" NVARCHAR(100)
+);

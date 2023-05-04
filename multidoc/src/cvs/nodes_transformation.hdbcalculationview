@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.cvs::nodes_transformation" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
 <descriptions defaultDescription="nodes_transformation.hdbcalculationview"/>
-<localVariables>
-  <variable id="IP_RELEASE_DATE" parameter="true">
-    <descriptions defaultDescription=""/>
-    <variableProperties datatype="DATE" mandatory="false">
-      <valueDomain type="empty"/>
-      <selection multiLine="false" type="SingleValue"/>
-    </variableProperties>
-  </variable>
-</localVariables>
+<localVariables/>
 <variableMappings/>
 <dataSources>
   <DataSource id="json.Views.playlists::playlists_all">
@@ -74,9 +66,7 @@
     </viewAttributes>
     <calculatedViewAttributes/>
     <restrictedViewAttributes/>
-    <input node="json.Views.albums::albums_all"/>
-    <filter>if(isNULL('$$IP_RELEASE_DATE$$') or '$$IP_RELEASE_DATE$$'= '', '1997-01-01','$$IP_RELEASE_DATE$$')</filter>
-  </calculationView>
+    <input node="json.Views.albums::albums_all"/></calculationView>
   <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
     <viewAttributes>
       <viewAttribute id="CATEGORY"/>
@@ -243,7 +233,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="IDforRANK" source="IDforRANK"/>
     </input>
     <function name="ROW_NUMBER"/>
-    <windowFunctionResultColumn>row_num</windowFunctionResultColumn>
+    <windowFunctionResultColumn datatype="DOUBLE">row_num</windowFunctionResultColumn>
     <orderAttributes>
       <orderAttribute direction="ASC">ID</orderAttribute>
     </orderAttributes>
@@ -344,7 +334,7 @@
       <rectangleSize height="30" width="301"/>
     </shape>
     <shape expanded="true" modelObjectName="albums" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="-94" y="913"/>
+      <upperLeftCorner x="-82" y="919"/>
       <rectangleSize height="30" width="218"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">

@@ -12,7 +12,9 @@ BEGIN
 
     insert into "json.tables::EDGES"
     SELECT "ID", "SOURCE","TARGET", "Relationship"
-    FROM  "json.cvs::edges_transformation";
+    FROM  "json.cvs::edges_transformation"
+    where source not in ('0Aergaee1PD3zbWcjxcUJl','1QJSy2Unc4j50ibbiO2DXQ')
+    and target not in ('0LyfQWJT6nXafLPZqxe9Of','0Aergaee1PD3zbWcjxcUJl');
     
 END;
 
