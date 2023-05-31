@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="json.cvs::generate_list_genres" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="generate_list_genres.hdbcalculationview"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="json.cvs::nodes_transformation">
+    <resourceUri>json.cvs::nodes_transformation</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:ProjectionView" id="genres">
+    <viewAttributes>
+      <viewAttribute id="genres"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="json.cvs::nodes_transformation"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="substring">
+    <viewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="occurrence2" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 2)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurence3" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 3)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence4" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 4)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence5" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 5)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="Occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>replace(&quot;occurrence1&quot;, '[','') 
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="genres"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="substring_copy1">
+    <viewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="occurrence2" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 2)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurence3" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 3)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence4" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 4)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence5" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 5)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="Occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>replace(&quot;occurrence1&quot;, '[','') 
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="genres"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="substring_copy">
+    <viewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="occurrence2" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 2)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurence3" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 3)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence4" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 4)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence5" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 5)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="Occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>replace(&quot;occurrence1&quot;, '[','') 
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="genres"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="substring_copy2">
+    <viewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="occurrence2" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 2)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurence3" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 3)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence4" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 4)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence5" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 5)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="Occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>replace(&quot;occurrence1&quot;, '[','') 
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="genres"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="substring_copy3">
+    <viewAttributes/>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="occurrence2" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 2)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurence3" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 3)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence4" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 4)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence5" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 5)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>SUBSTR_REGEXPR( '([^,])([^,]*)(?=,)' in &quot;genres&quot; OCCURreNCE 1)</formula>
+      </calculatedViewAttribute>
+      <calculatedViewAttribute id="Occurrence1" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>replace(&quot;occurrence1&quot;, '[','') 
+</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="genres"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:UnionView" id="Union_1">
+    <viewAttributes>
+      <viewAttribute id="genres" datatype="NVARCHAR" length="20"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="substring" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="occurrence2"/>
+    </input>
+  
+    <input node="substring_copy" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="occurence3"/>
+    </input>
+    <input node="substring_copy2" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="occurrence4"/>
+    </input>
+    <input node="substring_copy3" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="occurrence5"/>
+    </input>
+    <input node="substring_copy1" emptyUnionBehavior="NO_ROW">
+      <mapping xsi:type="Calculation:AttributeMapping" target="genres" source="Occurrence1"/>
+    </input>
+  </calculationView>
+  <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+    <viewAttributes>
+      <viewAttribute id="genres"/>
+    </viewAttributes>
+    <calculatedViewAttributes>
+      <calculatedViewAttribute id="remove_quotes" datatype="NVARCHAR" length="20" expressionLanguage="SQL">
+        <formula>rtrim(ltrim(replace(&quot;genres&quot;, '&quot;','')))</formula>
+      </calculatedViewAttribute>
+    </calculatedViewAttributes>
+    <input node="Union_1"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Projection_1">
+  <attributes>
+    <attribute id="genres" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="occurrence2"/>
+      <keyMapping columnObjectName="Projection_1" columnName="remove_quotes"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="622" y="112"/>
+    
+      <rectangleSize width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="genres" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="691"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="substring" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="722" y="546"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="substring_copy1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="92" y="546"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="substring_copy" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="932" y="546"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="substring_copy2" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="546"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="substring_copy3" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="302" y="546"/>
+      <rectangleSize width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Union_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="512" y="341"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="622" y="217"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
