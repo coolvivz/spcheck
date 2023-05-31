@@ -158,7 +158,7 @@
       <mapping xsi:type="Calculation:AttributeMapping" target="Relationship" source="Relationship"/>
     </input>
     <function name="ROW_NUMBER"/>
-    <windowFunctionResultColumn>rank_id</windowFunctionResultColumn>
+    <windowFunctionResultColumn datatype="DOUBLE">rank_id</windowFunctionResultColumn>
     <orderAttributes>
       <orderAttribute direction="ASC">SOURCE</orderAttribute>
     </orderAttributes>
@@ -267,8 +267,8 @@
       <rectangleSize height="30" width="160"/>
     </shape>
     <shape expanded="true" modelObjectName="album_artist" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="92" y="761"/>
-      <rectangleSize height="30" width="160"/>
+      <upperLeftCorner x="51" y="761"/>
+      <rectangleSize height="30" width="201"/>
     </shape>
     <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
       <upperLeftCorner x="307" y="636"/>
